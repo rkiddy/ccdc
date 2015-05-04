@@ -64,7 +64,6 @@ WSGI_APPLICATION = 'ccdc.wsgi.application'
 DATABASES = {
     'default': {
         'NAME': 'calaccess_raw',
-        'PASSWORD': 'alcibiades99',
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'ray',
         'HOST': 'localhost',
