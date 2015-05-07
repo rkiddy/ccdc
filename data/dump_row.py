@@ -6,13 +6,23 @@ try:
     lines = [line_num]
 except IndexError:
     print ''
-    print 'Please provide a tsv file name and a line number. A second number will give you a range.'
+    print 'Please provide a tsv file name and a line number.
+    print ''
+    print 'A second number will give you a range.'
+    print ''
+    print 'If you use the word "error" as the second parameter, you'
+    print 'will get lines starting at the line number of the first'
+    print 'parameter, until there is an error.'
+    print '(Not Yet Implemented)'
     print ''
     exit()
 
 if len(sys.argv) > 3:
-    last_num = sys.argv[3]
-    lines = range(int(line_num), int(last_num)+1)
+    if sys.argv[3] == 'error':
+        until_error = True
+    else:
+        until_error = False    
+        lines = range(int(line_num), int(sys.argv[3])+1)
 
 print 'filename: %s' % filename
 
